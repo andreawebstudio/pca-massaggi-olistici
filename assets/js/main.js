@@ -106,6 +106,10 @@
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll('.faq-item button').forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute('aria-controls'));
+    // tutte le tendine partono chiuse
+    btn.setAttribute('aria-expanded', 'false');
+    panel.classList.remove('is-open');
+    panel.hidden = true;
     btn.addEventListener('click', function () {
       var open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
